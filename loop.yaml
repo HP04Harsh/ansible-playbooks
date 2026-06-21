@@ -1,0 +1,11 @@
+- name: Create multiple directories
+  hosts: localhost
+  tasks:
+    - name: Create project folders
+      file:
+        path: "/tmp/{{ item }}"
+        state: directory
+      loop:
+        - src
+        - bin
+        - doc

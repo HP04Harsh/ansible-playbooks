@@ -1,0 +1,12 @@
+- name:  user_creation
+  hosts: localhost
+  become: true
+  tasks:
+    - name: user add
+      user:
+         name: Sakshi
+         comment: DevOps Engineer
+         shell: /bin/sh
+         group: Harsh
+         update_password: always
+         password: "{{'Gondia@321'| password_hash('sha512')}}"

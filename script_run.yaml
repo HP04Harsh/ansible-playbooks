@@ -1,0 +1,10 @@
+- name: shell execution
+  hosts: localhost
+  become: true
+  tasks:
+    - name: shell execute
+      shell: /home/Harsh/script.sh > test.log
+      args:
+         chdir: /home/Harsh/Learn
+         creates: test.log
+  

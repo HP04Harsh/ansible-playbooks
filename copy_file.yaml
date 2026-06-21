@@ -1,0 +1,12 @@
+- name: Copy File
+  hosts: localhost
+  become: true
+  tasks:
+    - name: copy file
+      copy:
+        src: /home/Harsh/
+        dest: /home/Harsh/Test
+        mode: 0444
+        owner: Harsh
+        group: Harsh
+        backup: true

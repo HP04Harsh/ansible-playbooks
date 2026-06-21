@@ -1,0 +1,11 @@
+- name: download a file
+  hosts: localhost
+  become: true
+  tasks:
+    - name: download file
+      get_url:
+         url: "https://jsonplaceholder.typicode.com/posts"
+         dest: /home/Harsh/Learn/website.txt
+         owner: nobody
+         group: nogroup
+         mode: 0444

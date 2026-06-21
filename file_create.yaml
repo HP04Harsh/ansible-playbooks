@@ -1,0 +1,19 @@
+- name: file create and copy
+  hosts: localhost
+  become: true
+  tasks:
+    - name: file create
+      file:
+        path: /home/Harsh/gondia.html
+        owner: nobody
+        group: nogroup
+        mode: 0744
+        state: touch
+      tags: file_create
+    
+    - name: file copy
+      copy:
+         src: /home/Harsh/gondia.html
+         dest: /home/Harsh/Learn
+         backup: true 
+      tags: file_copy
